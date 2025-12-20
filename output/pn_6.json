@@ -1,0 +1,53 @@
+{
+  "note_id": "pn_6",
+  "source_file": "progress_notes/pn_6",
+  "assessment_plan": "1) Diabetes - A1c 7.5 in office.  \nPt to follow up with ophthalmology for yearly eye exam\n\n2) HTN - stable, continue current meds \n\n3) COPD - No issues, continue meds\n\n4) MDD -PHQ9 in office was 8, improved\n-continue outpatient mental health counseling \"",
+  "conditions": [
+    {
+      "condition": "Diabetes",
+      "icd10_code": null,
+      "icd10_description": null,
+      "clinical_status": null,
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Hypertension",
+      "icd10_code": null,
+      "icd10_description": null,
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Chronic obstructive pulmonary disease",
+      "icd10_code": null,
+      "icd10_description": null,
+      "clinical_status": null,
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Major depressive disorder",
+      "icd10_code": null,
+      "icd10_description": null,
+      "clinical_status": "improving",
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    }
+  ],
+  "errors": [],
+  "created_at": "2025-12-20T08:01:56.571659+00:00"
+}

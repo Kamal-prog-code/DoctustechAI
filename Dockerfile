@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+ENV POETRY_VERSION=1.8.3 \
+    POETRY_NO_INTERACTION=1 \
+    POETRY_VIRTUALENVS_CREATE=false \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir "poetry==${POETRY_VERSION}"
+
+COPY pyproject.toml poetry.lock* /app/
+RUN poetry install --with dev --no-root
+
+COPY src /app/src
+COPY progress_notes /app/progress_notes
+COPY HCC_relevant_codes.csv /app/HCC_relevant_codes.csv
+COPY langgraph.json /app/langgraph.json
+COPY README.md /app/README.md
+
+RUN poetry install --with dev
+
+ENTRYPOINT ["poetry", "run"]
+CMD ["hcc-pipeline"]

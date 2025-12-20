@@ -1,0 +1,94 @@
+{
+  "note_id": "pn_8",
+  "source_file": "progress_notes/pn_8",
+  "assessment_plan": "1.        Type 1 diabetes mellitus -\nStable\nContinue insulin regimen with Glargine at bedtime and Lispro with meals\nEncourage frequent blood sugar monitoring and A1c check in 3 months\nE10.9: Type 1 diabetes mellitus without complications\n        2.        Chronic migraine -\nImproving\nContinue Topiramate 50 mg twice daily for prevention\nUse Sumatriptan at onset of acute episodes\nSchedule follow-up in 6 months or as needed\nG43.909: Migraine, unspecified, not intractable, without status migrainosus\n        3.        Obstructive sleep apnea -\nNew diagnosis\nInitiate CPAP therapy\nFollow up with sleep specialist in 3 months\nG47.33: Obstructive sleep apnea (adult)\n        4.        Hypertension -\nStable\nContinue Losartan 50 mg daily\nBP today was 125/78 mmHg\nI10: Essential (primary) hypertension\n        5.        Hyperlipidemia -\nStable\nContinue heart-healthy diet and regular exercise\nPlan to recheck lipid panel in 6 months\nE78.5: Hyperlipidemia, unspecified\n        6.        Gastroesophageal reflux disease (GERD) -\nImproving\nContinue lifestyle modifications and avoid trigger foods\nConsider PPI if symptoms worsen\nK21.9: Gastro-esophageal reflux disease without esophagitis\n        7.        Depression -\nImproving\nContinue counseling and monitor symptoms\nF32.9: Major depressive disorder, single episode, unspecified",
+  "conditions": [
+    {
+      "condition": "Type 1 diabetes mellitus",
+      "icd10_code": "E10.9",
+      "icd10_description": "Type 1 diabetes mellitus without complications",
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "E109",
+        "description": "Type 1 diabetes mellitus without complications",
+        "tags": null
+      },
+      "match_method": "code"
+    },
+    {
+      "condition": "Chronic migraine",
+      "icd10_code": "G43.909",
+      "icd10_description": "Migraine, unspecified, not intractable, without status migrainosus",
+      "clinical_status": "chronic",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Obstructive sleep apnea",
+      "icd10_code": "G47.33",
+      "icd10_description": "Obstructive sleep apnea (adult)",
+      "clinical_status": null,
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Hypertension",
+      "icd10_code": "I10",
+      "icd10_description": "Essential (primary) hypertension",
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "icd10_code": "E78.5",
+      "icd10_description": "Hyperlipidemia, unspecified",
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Gastroesophageal reflux disease (GERD)",
+      "icd10_code": "K21.9",
+      "icd10_description": "Gastro-esophageal reflux disease without esophagitis",
+      "clinical_status": "improving",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Depression",
+      "icd10_code": "F32.9",
+      "icd10_description": "Major depressive disorder, single episode, unspecified",
+      "clinical_status": "improving",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "F321",
+        "description": "Major depressive disorder, single episode, moderate",
+        "tags": null
+      },
+      "match_method": "code_prefix_fuzzy"
+    }
+  ],
+  "errors": [],
+  "created_at": "2025-12-20T08:02:14.482616+00:00"
+}

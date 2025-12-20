@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "hcc_pipeline": {
+      "path": "hcc_pipeline.graph_entry:graph"
+    }
+  }
+}

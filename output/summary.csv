@@ -1,0 +1,58 @@
+note_id,condition,icd10_code,icd10_description,clinical_status,severity,confidence,hcc_relevant,hcc_code,hcc_description,match_method
+pn_1,Gastroesophageal reflux disease,K21.9,Gastro-esophageal reflux disease without esophagitis,stable,,,False,,,
+pn_1,Hyperglycemia due to type 2 diabetes mellitus,E11.65,Type 2 diabetes mellitus with hyperglycemia,worsening,,,True,E1165,Type 2 diabetes mellitus with hyperglycemia,code
+pn_1,Chronic obstructive lung disease,J44.9,"Chronic obstructive pulmonary disease, unspecified",chronic,,,True,J449,"Chronic obstructive pulmonary disease, unspecified",code
+pn_1,Essential hypertension,I10,Essential (primary) hypertension,stable,,,False,,,
+pn_1,Chronic systolic heart failure,I50.22,Chronic systolic (congestive) heart failure,chronic,,,True,I5022,Chronic systolic (congestive) heart failure,code
+pn_1,Chronic kidney disease stage 4,N18.4,"Chronic kidney disease, stage 4 (severe)",chronic,severe,,True,N184,"Chronic kidney disease, stage 4 (severe)",code
+pn_1,Morbid obesity,E66.01,Morbid (severe) obesity due to excess calories,improving,moderate,,True,E6601,Morbid (severe) obesity due to excess calories,code
+pn_2,Gastroesophageal reflux disease,K21.9,Gastro-esophageal reflux disease without esophagitis,stable,,,False,,,
+pn_2,Hyperglycemia due to type 2 diabetes mellitus,E11.65,Type 2 diabetes mellitus with hyperglycemia,worsening,,,True,E1165,Type 2 diabetes mellitus with hyperglycemia,code
+pn_2,Chronic obstructive lung disease,J44.9,"Chronic obstructive pulmonary disease, unspecified",chronic,,,True,J449,"Chronic obstructive pulmonary disease, unspecified",code
+pn_2,Essential hypertension,I10,Essential (primary) hypertension,stable,,,False,,,
+pn_2,Chronic systolic heart failure,I50.22,Chronic systolic (congestive) heart failure,chronic,,,True,I5022,Chronic systolic (congestive) heart failure,code
+pn_2,Chronic kidney disease stage 4,N18.4,"Chronic kidney disease, stage 4 (severe)",chronic,severe,,True,N184,"Chronic kidney disease, stage 4 (severe)",code
+pn_2,Morbid obesity,E66.01,Morbid (severe) obesity due to excess calories,improving,moderate,,True,E6601,Morbid (severe) obesity due to excess calories,code
+pn_3,Gastroesophageal reflux disease,K21.9,Gastro-esophageal reflux disease without esophagitis,stable,,,False,,,
+pn_3,Hyperglycemia due to type 2 diabetes mellitus,E11.65,Type 2 diabetes mellitus with hyperglycemia,worsening,,,True,E1165,Type 2 diabetes mellitus with hyperglycemia,code
+pn_3,Chronic obstructive lung disease,J44.9,"Chronic obstructive pulmonary disease, unspecified",chronic,,,True,J449,"Chronic obstructive pulmonary disease, unspecified",code
+pn_3,Essential hypertension,I10,Essential (primary) hypertension,stable,,,False,,,
+pn_3,Chronic systolic heart failure,I50.22,Chronic systolic (congestive) heart failure,chronic,,,True,I5022,Chronic systolic (congestive) heart failure,code
+pn_3,Chronic kidney disease stage 4,N18.4,"Chronic kidney disease, stage 4 (severe)",chronic,severe,,True,N184,"Chronic kidney disease, stage 4 (severe)",code
+pn_3,Morbid obesity,E66.01,Morbid (severe) obesity due to excess calories,improving,moderate,,True,E6601,Morbid (severe) obesity due to excess calories,code
+pn_4,Gastroesophageal reflux disease,K21.9,Gastro-esophageal reflux disease without esophagitis,stable,,,False,,,
+pn_4,Hyperglycemia due to type 2 diabetes mellitus,E11.65,Type 2 diabetes mellitus with hyperglycemia,worsening,,,True,E1165,Type 2 diabetes mellitus with hyperglycemia,code
+pn_4,Chronic obstructive lung disease,J44.9,"Chronic obstructive pulmonary disease, unspecified",chronic,,,True,J449,"Chronic obstructive pulmonary disease, unspecified",code
+pn_4,Essential hypertension,I10,Essential (primary) hypertension,stable,,,False,,,
+pn_4,Chronic systolic heart failure,I50.22,Chronic systolic (congestive) heart failure,chronic,,,True,I5022,Chronic systolic (congestive) heart failure,code
+pn_4,Chronic kidney disease stage 4,N18.4,"Chronic kidney disease, stage 4 (severe)",chronic,severe,,True,N184,"Chronic kidney disease, stage 4 (severe)",code
+pn_4,Morbid obesity,E66.01,Morbid (severe) obesity due to excess calories,improving,moderate,,True,E6601,Morbid (severe) obesity due to excess calories,code
+pn_5,Gastroesophageal reflux disease,K21.9,Gastro-esophageal reflux disease without esophagitis,stable,,,False,,,
+pn_5,Hyperglycemia due to type 2 diabetes mellitus,E11.65,Type 2 diabetes mellitus with hyperglycemia,worsening,,,True,E1165,Type 2 diabetes mellitus with hyperglycemia,code
+pn_5,Chronic obstructive lung disease,J44.9,"Chronic obstructive pulmonary disease, unspecified",chronic,,,True,J449,"Chronic obstructive pulmonary disease, unspecified",code
+pn_5,Essential hypertension,I10,Essential (primary) hypertension,stable,,,False,,,
+pn_5,Chronic systolic heart failure,I50.22,Chronic systolic (congestive) heart failure,chronic,,,True,I5022,Chronic systolic (congestive) heart failure,code
+pn_5,Chronic kidney disease stage 4,N18.4,"Chronic kidney disease, stage 4 (severe)",chronic,severe,,True,N184,"Chronic kidney disease, stage 4 (severe)",code
+pn_5,Morbid obesity,E66.01,Morbid (severe) obesity due to excess calories,improving,moderate,,True,E6601,Morbid (severe) obesity due to excess calories,code
+pn_6,Diabetes,,,,,high,False,,,
+pn_6,Hypertension,,,stable,,high,False,,,
+pn_6,Chronic obstructive pulmonary disease,,,,,high,False,,,
+pn_6,Major depressive disorder,,,improving,,high,False,,,
+pn_7,Substance use disorder,F19.20,"Other psychoactive substance dependence, uncomplicated",,moderate,high,True,F1920,"Other psychoactive substance dependence, uncomplicated",code
+pn_7,Hyperlipidemia,E78.5,,,,high,False,,,
+pn_7,Gastroesophageal reflux disease,K21.9,,worsening,,high,False,,,
+pn_7,Coronary artery disease,I25.10,Atherosclerotic heart disease of native coronary artery with unstable angina pectoris,stable,,high,True,I25110,Atherosclerotic heart disease of native coronary artery with unstable angina pectoris,code_prefix_fuzzy
+pn_7,Inflammatory bowel disease,K51.90,"Ulcerative colitis, unspecified, without complications",stable,,high,True,K5190,"Ulcerative colitis, unspecified, without complications",code
+pn_8,Type 1 diabetes mellitus,E10.9,Type 1 diabetes mellitus without complications,stable,,,True,E109,Type 1 diabetes mellitus without complications,code
+pn_8,Chronic migraine,G43.909,"Migraine, unspecified, not intractable, without status migrainosus",chronic,,,False,,,
+pn_8,Obstructive sleep apnea,G47.33,Obstructive sleep apnea (adult),,,,False,,,
+pn_8,Hypertension,I10,Essential (primary) hypertension,stable,,,False,,,
+pn_8,Hyperlipidemia,E78.5,"Hyperlipidemia, unspecified",stable,,,False,,,
+pn_8,Gastroesophageal reflux disease (GERD),K21.9,Gastro-esophageal reflux disease without esophagitis,improving,,,False,,,
+pn_8,Depression,F32.9,"Major depressive disorder, single episode, unspecified",improving,,,True,F321,"Major depressive disorder, single episode, moderate",code_prefix_fuzzy
+pn_9,Fibromyalgia,M79.7,Fibromyalgia,improving,,high,False,,,
+pn_9,Hypertension,I10,Essential (primary) hypertension,stable,,high,False,,,
+pn_9,Hyperlipidemia,E78.5,"Hyperlipidemia, unspecified",stable,,high,False,,,
+pn_9,Anxiety disorder,F41.1,Generalized anxiety disorder,acute,,high,False,,,
+pn_9,Obesity,E66.9,"Obesity, unspecified",unchanged,,high,True,E6601,Morbid (severe) obesity due to excess calories,code_prefix_fuzzy
+pn_9,Chronic fatigue syndrome,R53.82,"Chronic fatigue, unspecified",stable,,high,False,,,

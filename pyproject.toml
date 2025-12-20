@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "hcc-pipeline"
+version = "0.1.0"
+description = "AI pipeline for extracting conditions and HCC relevance from clinical progress notes."
+authors = ["Karre Kamal <karrekamal10@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "hcc_pipeline", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+google-cloud-aiplatform = "^1.66.0"
+langgraph = "^1.0.0"
+pydantic = "^2.7.0"
+tenacity = "^8.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+langgraph-cli = { version = "^0.4.0", extras = ["inmem"] }
+
+[tool.poetry.scripts]
+hcc-pipeline = "hcc_pipeline.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,106 @@
+{
+  "note_id": "pn_5",
+  "source_file": "progress_notes/pn_5",
+  "assessment_plan": "1. Gastroesophageal reflux disease -\n   Stable\n   Continue the antacids\n   F/U in 3 months\n   K21.9: Gastro-esophageal reflux disease without esophagitis\n\n2. Hyperglycemia due to type 2 diabetes mellitus -\n   Worsening\n   Continue Metformin1000 mg BID and Glimepiride 8 mg\n   Recommend a low sugar and low carbohydrate diet. Fruits and vegetables are acceptable.\n   Discussed 1/2 plate with non-starchy vegetables, 1/4 of plate with carbohydrates such as whole grain, 1/4 of plate with lean protein.\n   Include healthy fats in your meal like: Olive oil, canola oil, avocado, and nuts\n   E11.65: Type 2 diabetes mellitus with hyperglycemia\n\n3. Chronic obstructive lung disease -\n   Unchanged\n   SPO2-98% today\n   Maintain current inhaler regimen: Tiotropium and Fluticasone/Salmeterol.\n   Counseled for smoking cessation today\n   J44.9: Chronic obstructive pulmonary disease, unspecified\n\n4. Essential hypertension -\n   Stable\n   on Metoprolol and Losartan-HCTZ\n   BP checks at home: high in morning before meds\n   BP: 140/80 today\n   I10: Essential (primary) hypertension\n\n5. Chronic systolic heart failure -\n   Improving\n   Continue current medications: Lisinopril 10 mg daily, Metoprolol 50 mg twice daily, Furosemide 40 mg daily.\n   Weight today was 259 lbs; Monitor weight daily to detect fluid retention. Schedule follow-up appointments every 3 months to assess symptom control and adjust treatment as necessary\n   Echocardiography ordered today to assess the CHF\n   I50.22: Chronic systolic (congestive) heart failure\n\n6. Chronic kidney disease stage 4\n   Improving: As per lab results-egfr today 28 from 21 (in March 2024)\n   Continue ACE inhibitor. Start atorvastatin 10 mg\n   N18.4: Chronic kidney disease, stage 4 (severe)\n\n7. Morbid obesity -\n   Improving\n   Encouraged for at least 150 minutes of moderate-intensity aerobic activity per week.\n   Discussed importance of weight loss and healthy lifestyle changes\n   Continue to track dietary intake and physical activity\n   E66.01: Morbid (severe) obesity due to excess calories",
+  "conditions": [
+    {
+      "condition": "Gastroesophageal reflux disease",
+      "icd10_code": "K21.9",
+      "icd10_description": "Gastro-esophageal reflux disease without esophagitis",
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Hyperglycemia due to type 2 diabetes mellitus",
+      "icd10_code": "E11.65",
+      "icd10_description": "Type 2 diabetes mellitus with hyperglycemia",
+      "clinical_status": "worsening",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "E1165",
+        "description": "Type 2 diabetes mellitus with hyperglycemia",
+        "tags": null
+      },
+      "match_method": "code"
+    },
+    {
+      "condition": "Chronic obstructive lung disease",
+      "icd10_code": "J44.9",
+      "icd10_description": "Chronic obstructive pulmonary disease, unspecified",
+      "clinical_status": "chronic",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "J449",
+        "description": "Chronic obstructive pulmonary disease, unspecified",
+        "tags": null
+      },
+      "match_method": "code"
+    },
+    {
+      "condition": "Essential hypertension",
+      "icd10_code": "I10",
+      "icd10_description": "Essential (primary) hypertension",
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Chronic systolic heart failure",
+      "icd10_code": "I50.22",
+      "icd10_description": "Chronic systolic (congestive) heart failure",
+      "clinical_status": "chronic",
+      "severity": null,
+      "confidence": null,
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "I5022",
+        "description": "Chronic systolic (congestive) heart failure",
+        "tags": null
+      },
+      "match_method": "code"
+    },
+    {
+      "condition": "Chronic kidney disease stage 4",
+      "icd10_code": "N18.4",
+      "icd10_description": "Chronic kidney disease, stage 4 (severe)",
+      "clinical_status": "chronic",
+      "severity": "severe",
+      "confidence": null,
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "N184",
+        "description": "Chronic kidney disease, stage 4 (severe)",
+        "tags": null
+      },
+      "match_method": "code"
+    },
+    {
+      "condition": "Morbid obesity",
+      "icd10_code": "E66.01",
+      "icd10_description": "Morbid (severe) obesity due to excess calories",
+      "clinical_status": "improving",
+      "severity": "moderate",
+      "confidence": null,
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "E6601",
+        "description": "Morbid (severe) obesity due to excess calories",
+        "tags": null
+      },
+      "match_method": "code"
+    }
+  ],
+  "errors": [],
+  "created_at": "2025-12-20T08:01:53.370056+00:00"
+}

@@ -1,0 +1,76 @@
+{
+  "note_id": "pn_7",
+  "source_file": "progress_notes/pn_7",
+  "assessment_plan": "1) Substance use disorder moderate - F19.20\n- No relapses\n-will order UDS\n- continue to follow with NA\n- continue suboxone\n\n2) HLD - E78.5\n- No issues\n- Will order FLP\n- Continue statin\n\n3) GERD -  K21.9\n- Worsening\n- Will order EGD and GI consult\n\n4) CAD - I25.10 \n-stable, follow up with cardiology\n\n5) IBD - K51.90\n-stable, regular stools\n-follow up with GI\"",
+  "conditions": [
+    {
+      "condition": "Substance use disorder",
+      "icd10_code": "F19.20",
+      "icd10_description": "Other psychoactive substance dependence, uncomplicated",
+      "clinical_status": null,
+      "severity": "moderate",
+      "confidence": "high",
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "F1920",
+        "description": "Other psychoactive substance dependence, uncomplicated",
+        "tags": null
+      },
+      "match_method": "code"
+    },
+    {
+      "condition": "Hyperlipidemia",
+      "icd10_code": "E78.5",
+      "icd10_description": null,
+      "clinical_status": null,
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Gastroesophageal reflux disease",
+      "icd10_code": "K21.9",
+      "icd10_description": null,
+      "clinical_status": "worsening",
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": false,
+      "hcc_match": null,
+      "match_method": null
+    },
+    {
+      "condition": "Coronary artery disease",
+      "icd10_code": "I25.10",
+      "icd10_description": "Atherosclerotic heart disease of native coronary artery with unstable angina pectoris",
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "I25110",
+        "description": "Atherosclerotic heart disease of native coronary artery with unstable angina pectoris",
+        "tags": null
+      },
+      "match_method": "code_prefix_fuzzy"
+    },
+    {
+      "condition": "Inflammatory bowel disease",
+      "icd10_code": "K51.90",
+      "icd10_description": "Ulcerative colitis, unspecified, without complications",
+      "clinical_status": "stable",
+      "severity": null,
+      "confidence": "high",
+      "hcc_relevant": true,
+      "hcc_match": {
+        "code": "K5190",
+        "description": "Ulcerative colitis, unspecified, without complications",
+        "tags": null
+      },
+      "match_method": "code"
+    }
+  ],
+  "errors": [],
+  "created_at": "2025-12-20T08:02:03.918698+00:00"
+}
