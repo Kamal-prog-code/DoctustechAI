@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "AI pipeline for extracting conditions and HCC relevance from clinical progress notes."
 authors = ["Karre Kamal <karrekamal10@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "hcc_pipeline", from = "src" }]
+packages = [
+  { include = "hcc_pipeline", from = "src" },
+  { include = "framework", from = "src" },
+  { include = "workflows", from = "src" },
+  { include = "scripts", from = "src" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"

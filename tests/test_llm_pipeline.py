@@ -137,7 +137,8 @@ def test_hcc_evaluation_by_description(tmp_path):
 def test_hcc_partial_match_with_abbreviation(tmp_path):
     csv_path = tmp_path / "hcc.csv"
     csv_path.write_text(
-        "ICD-10-CM Codes,Description,Tags\nJ449,Chronic obstructive pulmonary disease, unspecified,\n"
+        "ICD-10-CM Codes,Description,Tags\n"
+        "J449,\"Chronic obstructive pulmonary disease, unspecified\",\n"
     )
 
     lookup = HccCodeLookup.from_csv(csv_path)
@@ -226,7 +227,8 @@ def test_post_process_conditions_dedupes_and_normalizes():
 def test_hcc_fuzzy_match(tmp_path):
     csv_path = tmp_path / "hcc.csv"
     csv_path.write_text(
-        "ICD-10-CM Codes,Description,Tags\nN184,Chronic kidney disease, stage 4 (severe),\n"
+        "ICD-10-CM Codes,Description,Tags\n"
+        "N184,\"Chronic kidney disease, stage 4 (severe)\",\n"
     )
 
     lookup = HccCodeLookup.from_csv(csv_path)
