@@ -3,8 +3,8 @@ from __future__ import annotations
 import re
 from typing import List
 
-from hcc_pipeline.models import Condition
-from hcc_pipeline.utils.conditions import extract_icd10_codes, find_description_for_code
+from workflows.hcc.v1.schemas.domain import Condition
+from workflows.hcc.v1.nodes.conditions_utils import extract_icd10_codes, find_description_for_code
 
 
 BLOCK_START_RE = re.compile(r"^\s*\d+[\).]\s*")

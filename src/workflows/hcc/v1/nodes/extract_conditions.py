@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 from typing import Any, Callable
 
-from hcc_pipeline.utils.conditions import post_process_conditions
+from workflows.hcc.v1.nodes.conditions_utils import post_process_conditions
 from workflows.hcc.v1.types import PipelineState
 
 

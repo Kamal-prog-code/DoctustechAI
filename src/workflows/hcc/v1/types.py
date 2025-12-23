@@ -4,7 +4,7 @@ from typing import List
 
 from typing_extensions import TypedDict
 
-from hcc_pipeline.models import Condition
+from workflows.hcc.v1.schemas.domain import Condition
 
 
 class PipelineState(TypedDict):

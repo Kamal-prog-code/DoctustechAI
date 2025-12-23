@@ -17,9 +17,9 @@ from workflows.hcc.v1.nodes.extract_conditions_rule_based import RuleBasedCondit
 from workflows.hcc.v1.nodes.hcc_evaluation import HccCodeLookup, HccEvaluator
 from workflows.hcc.v1.orchestrator import build_graph
 from workflows.hcc.v1.schemas.llm import RESPONSE_SCHEMA
-from hcc_pipeline.io.notes import iter_note_files, load_note_text
-from hcc_pipeline.logging_utils import configure_logging
-from hcc_pipeline.models import NoteResult
+from framework.io.notes import iter_note_files, load_note_text
+from framework.logging_utils import configure_logging
+from workflows.hcc.v1.schemas.domain import NoteResult
 
 
 logger = logging.getLogger(__name__)

@@ -7,7 +7,7 @@ from typing import Any, Optional
 
 from framework.llm.client import LLMClient
 from framework.utils.env import parse_bool_env
-from hcc_pipeline.models import Condition
+from workflows.hcc.v1.schemas.domain import Condition
 from workflows.hcc.v1.nodes.llm_parsing import conditions_from_payload, parse_llm_json
 from workflows.hcc.v1.prompt_templates.conditions_extraction import PROMPT_TEMPLATE
 from workflows.hcc.v1.prompt_templates.json_repair import REPAIR_PROMPT_TEMPLATE

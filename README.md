@@ -123,14 +123,14 @@ View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux
 Skipping virtualenv creation, as specified in config file.
 /usr/local/lib/python3.11/site-packages/vertexai/generative_models/_generative_models.py:433: UserWarning: This feature is deprecated as of June 24, 2025 and will be removed on June 24, 2026. For details, see https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk.
   warning_logs.show_deprecation_warning()
-2025-12-20 05:51:35,580 INFO hcc_pipeline.cli: Processing pn_1
-2025-12-20 05:51:40,654 INFO hcc_pipeline.cli: Processing pn_2
-2025-12-20 05:51:44,744 INFO hcc_pipeline.cli: Processing pn_3
-2025-12-20 05:51:48,716 INFO hcc_pipeline.cli: Processing pn_4
-2025-12-20 05:51:52,435 INFO hcc_pipeline.cli: Processing pn_5
-2025-12-20 05:51:56,600 INFO hcc_pipeline.cli: Processing pn_6
-2025-12-20 05:51:59,576 INFO hcc_pipeline.cli: Processing pn_7
-2025-12-20 05:52:02,529 INFO hcc_pipeline.cli: Processing pn_8
-2025-12-20 05:52:06,535 INFO hcc_pipeline.cli: Processing pn_9
-2025-12-20 05:52:11,104 INFO hcc_pipeline.cli: Processed 9 notes. Output: output
+2025-12-23 16:38:49,517 INFO scripts.hcc_pipeline_cli: Processing pn_1
+2025-12-23 16:38:59,628 INFO scripts.hcc_pipeline_cli: Processing pn_2
+2025-12-23 16:39:11,705 INFO scripts.hcc_pipeline_cli: Processing pn_3
+2025-12-23 16:39:22,250 INFO scripts.hcc_pipeline_cli: Processing pn_4
+2025-12-23 16:39:41,211 INFO scripts.hcc_pipeline_cli: Processing pn_5
+2025-12-23 16:39:52,267 INFO scripts.hcc_pipeline_cli: Processing pn_6
+2025-12-23 16:40:14,472 INFO scripts.hcc_pipeline_cli: Processing pn_7
+2025-12-23 16:40:22,020 INFO scripts.hcc_pipeline_cli: Processing pn_8
+2025-12-23 16:40:36,806 INFO scripts.hcc_pipeline_cli: Processing pn_9
+2025-12-23 16:40:47,088 INFO scripts.hcc_pipeline_cli: Processed 9 notes. Output: output
 ```

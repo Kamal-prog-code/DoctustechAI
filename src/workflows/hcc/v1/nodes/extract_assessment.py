@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from workflows.hcc.v1.types import PipelineState
-from hcc_pipeline.utils.text import extract_assessment_plan
+from workflows.hcc.v1.nodes.text_utils import extract_assessment_plan
 
 
 def extract_assessment_node(state: PipelineState) -> dict:

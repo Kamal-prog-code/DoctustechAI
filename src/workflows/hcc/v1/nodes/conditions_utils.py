@@ -3,8 +3,8 @@ from __future__ import annotations
 import re
 from typing import List, Optional, Tuple
 
-from hcc_pipeline.models import Condition
-from hcc_pipeline.utils.text import normalize_description, normalize_icd10_code
+from workflows.hcc.v1.schemas.domain import Condition
+from workflows.hcc.v1.nodes.text_utils import normalize_description, normalize_icd10_code
 
 
 ICD10_PATTERN = r"[A-TV-Z][0-9]{2}(?:\.[0-9A-TV-Z]{1,4}|[0-9A-TV-Z]{1,4})?"

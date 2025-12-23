@@ -3,14 +3,16 @@ from pathlib import Path
 
 import pytest
 
-from hcc_pipeline.config import VertexAIConfig
-from hcc_pipeline.evaluation.hcc import HccCodeLookup, HccEvaluator
-from hcc_pipeline.extraction.llm import LLMConditionExtractor, VertexGeminiClient
-from hcc_pipeline.extraction.rule_based import RuleBasedConditionExtractor
-from hcc_pipeline.graph import build_graph
-from hcc_pipeline.models import Condition
-from hcc_pipeline.utils.conditions import post_process_conditions
-from hcc_pipeline.utils.text import extract_assessment_plan, normalize_icd10_code
+from framework.llm.client import VertexGeminiClient
+from framework.llm.config import VertexAIConfig
+from workflows.hcc.v1.nodes.extract_conditions_llm import LLMConditionExtractor
+from workflows.hcc.v1.nodes.extract_conditions_rule_based import RuleBasedConditionExtractor
+from workflows.hcc.v1.nodes.hcc_evaluation import HccCodeLookup, HccEvaluator
+from workflows.hcc.v1.nodes.conditions_utils import post_process_conditions
+from workflows.hcc.v1.nodes.text_utils import extract_assessment_plan, normalize_icd10_code
+from workflows.hcc.v1.orchestrator import build_graph
+from workflows.hcc.v1.schemas.domain import Condition
+from workflows.hcc.v1.schemas.llm import RESPONSE_SCHEMA
 
 
 def _llm_env_ready() -> tuple[bool, str]:
@@ -157,7 +159,7 @@ def test_hcc_partial_match_with_abbreviation(tmp_path):
 def test_llm_extractor_basic():
     _require_llm_env()
     config = VertexAIConfig.from_env()
-    client = VertexGeminiClient(config)
+    client = VertexGeminiClient(config, response_schema=RESPONSE_SCHEMA)
     extractor = LLMConditionExtractor(client, fallback=None)
 
     assessment = "1) Hypertension - I10\n"
@@ -178,7 +180,7 @@ def test_llm_graph_end_to_end(tmp_path):
     evaluator = HccEvaluator(lookup)
 
     config = VertexAIConfig.from_env()
-    client = VertexGeminiClient(config)
+    client = VertexGeminiClient(config, response_schema=RESPONSE_SCHEMA)
     extractor = LLMConditionExtractor(client, fallback=None)
 
     app = build_graph(extractor, evaluator)

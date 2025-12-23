@@ -12,7 +12,7 @@ from framework.llm.json_utils import (
     sanitize_json_text,
     strip_code_fence,
 )
-from hcc_pipeline.models import Condition
+from workflows.hcc.v1.schemas.domain import Condition
 from workflows.hcc.v1.schemas.llm import LLMConditionPayload, LLMResponse
 
 

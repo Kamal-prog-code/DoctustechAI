@@ -5,8 +5,8 @@ import difflib
 from pathlib import Path
 from typing import Dict, Optional
 
-from hcc_pipeline.models import Condition, HccMatch
-from hcc_pipeline.utils.text import normalize_description, normalize_icd10_code
+from workflows.hcc.v1.schemas.domain import Condition, HccMatch
+from workflows.hcc.v1.nodes.text_utils import normalize_description, normalize_icd10_code
 
 
 _DESCRIPTION_STOP_TOKENS = {

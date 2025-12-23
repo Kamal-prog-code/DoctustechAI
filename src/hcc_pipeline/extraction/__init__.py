@@ -1,1 +1,0 @@
-"""Condition extraction logic."""
