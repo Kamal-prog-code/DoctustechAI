@@ -4,6 +4,157 @@ This project reads clinical progress notes, finds the Assessment/Plan section, a
 - One JSON file per note (in `output/`)
 - One summary CSV (in `output/summary.csv`)
 
+## Part 2: Full-Stack Interface (Web + Auth + Cloud)
+
+This repo now includes a full-stack layer that wraps the Part 1 pipeline with:
+- A Firebase-authenticated React UI (`frontend/`)
+- A FastAPI backend (`src/api`)
+- Background execution via Cloud Tasks (or FastAPI background tasks locally)
+- Durable persistence using Firestore (metadata/output) and GCS (inputs)
+
+### Architecture overview
+- Frontend: React app in `frontend/`, deployable on Firebase Hosting
+- Backend: FastAPI on Cloud Run (see `Dockerfile.api`)
+- Auth: Firebase Authentication in the browser, verified via Firebase Admin on the API
+- Background execution: Cloud Tasks calls `/tasks/process` per input
+- Storage: Firestore `workflow_executions` collection + optional GCS input bucket
+
+### How Part 1 workflows are integrated
+- Workflow registry: `src/api/workflows.py`
+- Single-note runner: `src/workflows/hcc/v1/runner.py` uses the existing LangGraph pipeline
+
+### Background processing
+- Each uploaded input is stored, persisted in Firestore, and queued for async processing.
+- Cloud Tasks is the primary mechanism (`USE_CLOUD_TASKS=true`).
+- For local dev, the API falls back to FastAPI background tasks.
+
+### Auth approach
+- Frontend signs in with Firebase Auth.
+- API expects `Authorization: Bearer <idToken>`.
+- Cloud Run uses ADC; local dev uses `GOOGLE_APPLICATION_CREDENTIALS` or `gcloud auth application-default login`.
+- `/tasks/process` uses `X-Task-Secret` if `TASKS_AUTH_SECRET` is set.
+
+### Key API environment variables
+- `GOOGLE_CLOUD_PROJECT`, `FIREBASE_PROJECT_ID`
+- `GOOGLE_APPLICATION_CREDENTIALS` (local/dev only; Cloud Run uses ADC)
+- `INPUT_BUCKET`
+- `USE_CLOUD_TASKS`, `TASKS_LOCATION`, `TASKS_QUEUE`, `TASKS_SERVICE_URL`, `TASKS_AUTH_SECRET`
+- `CORS_ORIGINS`
+- `USE_LLM`, `GOOGLE_CLOUD_LOCATION`
+
+### API endpoints (auth notes)
+- `GET /api/health` (public)
+- `GET /api/workflows`, `GET /api/executions`, `GET /api/executions/{id}`, `POST /api/executions` (Firebase ID token)
+- `POST /tasks/process` (Cloud Tasks; `X-Task-Secret` if set)
+
+Example request (authenticated):
+```
+curl -H "Authorization: Bearer <idToken>" "https://YOUR-CLOUD-RUN-URL/api/workflows"
+```
+
+### Assumptions & limitations
+- Single authenticated role; no RBAC.
+- One workflow (`hcc_v1`) is registered but the registry is extensible.
+- Storage rules deny direct access; all access flows through the API.
+- Local development can use `AUTH_DISABLED=true`, but production should not.
+- Firestore may require a composite index for processed date + workflow filters.
+
+## Part 2 Quick Start (Local)
+
+1) Configure env vars:
+```
+cp .env.example .env
+```
+Set at minimum:
+`GOOGLE_CLOUD_PROJECT`, `FIREBASE_PROJECT_ID`.
+For local LLM usage: `GOOGLE_APPLICATION_CREDENTIALS` (service account JSON path).
+
+2) Start the API:
+```
+poetry install --with dev
+poetry run uvicorn api.main:app --reload --host 0.0.0.0 --port 8080
+```
+Optional for local-only testing: set `AUTH_DISABLED=true` in `.env`.
+For Vite dev, set `CORS_ORIGINS=http://localhost:5173` in `.env`.
+
+Optional: run the API with Docker instead of Poetry:
+```
+docker build -t hcc-api -f Dockerfile.api .
+docker run --rm -p 8080:8080 \
+  --env-file .env \
+  -v /path/to/your-service-account.json:/app/credentials/service_account.json:ro \
+  -e GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/service_account.json \
+  hcc-api
+```
+
+3) Configure the frontend:
+```
+cd frontend
+npm install
+cp public/config.js.example public/config.js
+```
+Edit `public/config.js` with your Firebase web config + `apiBaseUrl`.
+For local API use, set `apiBaseUrl` to `http://localhost:8080`.
+
+4) Run the frontend dev server:
+```
+npm run dev
+```
+Then open `http://localhost:5173`.
+
+## Part 2 Deployment (Firebase + Cloud Run)
+
+1) Provision GCP resources:
+- Firestore (Native mode)
+- GCS bucket for inputs
+- Cloud Tasks queue (`TASKS_QUEUE`)
+- Vertex AI API (LLM)
+
+2) Build the API image with Cloud Build:
+```
+PROJECT_ID=doctustechai
+gcloud config set project $PROJECT_ID
+gcloud builds submit --config cloudbuild.api.yaml .
+```
+
+3) Deploy the API to Cloud Run:
+```
+PROJECT_ID=doctustechai
+REGION=us-central1
+SERVICE=hcc-api
+
+cp cloudrun.env.yaml.example cloudrun.env.yaml
+# Edit cloudrun.env.yaml and set TASKS_SERVICE_URL to the Cloud Run URL after first deploy.
+
+gcloud run deploy $SERVICE \
+  --image gcr.io/$PROJECT_ID/hcc-api \
+  --region $REGION \
+  --allow-unauthenticated \
+  --env-vars-file cloudrun.env.yaml
+```
+
+After the first deploy, grab the service URL and update `TASKS_SERVICE_URL`:
+```
+gcloud run services describe $SERVICE --region $REGION --format='value(status.url)'
+```
+Then re-run the deploy command to update env vars.
+
+4) Deploy the frontend to Firebase Hosting:
+```
+firebase init hosting firestore
+cd frontend
+npm install
+cp public/config.js.example public/config.js
+npm run build
+cd ..
+firebase deploy
+```
+
+Make sure `frontend/public/config.js` has the Cloud Run URL and Firebase config before `npm run build` (rebuild if you change it).
+
+### Cloud Run service account roles (minimum)
+`roles/datastore.user`, `roles/storage.objectAdmin`, `roles/cloudtasks.enqueuer`, `roles/aiplatform.user`.
+
 ## What you need (simple checklist)
 
 - Docker installed
@@ -27,7 +178,7 @@ service_account.json
 
 3) Build and run the pipeline:
 ```
-docker build -t hcc-pipeline . && docker run --rm \
+docker build -t hcc-pipeline . && docker run --rm -p 8080:8080 \
   --env-file .env \
   -v $(pwd)/service_account.json:/app/credentials/service_account.json:ro \
   -v $(pwd)/output:/app/output \

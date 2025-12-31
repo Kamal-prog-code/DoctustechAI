@@ -6,16 +6,24 @@ authors = ["Karre Kamal <karrekamal10@gmail.com>"]
 readme = "README.md"
 packages = [
   { include = "framework", from = "src" },
+  { include = "api", from = "src" },
   { include = "workflows", from = "src" },
   { include = "scripts", from = "src" },
 ]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+fastapi = "^0.115.0"
+firebase-admin = "^6.5.0"
+google-cloud-firestore = "^2.19.0"
+google-cloud-storage = "^2.18.0"
+google-cloud-tasks = "^2.17.0"
 google-cloud-aiplatform = "^1.66.0"
 langgraph = "^1.0.0"
 pydantic = "^2.7.0"
+python-multipart = "^0.0.9"
 tenacity = "^8.3.0"
+uvicorn = "^0.30.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.0"

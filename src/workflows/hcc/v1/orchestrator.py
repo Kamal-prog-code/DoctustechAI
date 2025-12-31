@@ -48,11 +48,19 @@ def get_graph() -> Any:
 
     use_llm = os.getenv("USE_LLM", "true").lower() not in {"0", "false", "no"}
     if use_llm:
-        vertex_config = VertexAIConfig.from_env()
-        client = VertexGeminiClient(vertex_config, response_schema=RESPONSE_SCHEMA)
-        extractor = LLMConditionExtractor(
-            client, fallback=RuleBasedConditionExtractor()
-        )
+        try:
+            vertex_config = VertexAIConfig.from_env()
+            client = VertexGeminiClient(
+                vertex_config, response_schema=RESPONSE_SCHEMA
+            )
+            extractor = LLMConditionExtractor(
+                client, fallback=RuleBasedConditionExtractor()
+            )
+        except Exception as exc:
+            logger.warning(
+                "LLM init failed; falling back to rule-based extraction: %s", exc
+            )
+            extractor = RuleBasedConditionExtractor()
     else:
         extractor = RuleBasedConditionExtractor()
 

@@ -4,5 +4,9 @@ __pycache__/
 .env
 *.log
 .DS_Store
+node_modules/
 credentials/
 service_account.json
+frontend/dist
+frontend/public/config.js
+cloudrun.env.yaml

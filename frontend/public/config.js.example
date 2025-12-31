@@ -1,0 +1,9 @@
+window.RUNTIME_CONFIG = {
+  apiBaseUrl: "https://cloud-run-url",
+  firebase: {
+    apiKey: "FIREBASE_WEB_API_KEY",
+    authDomain: "project.firebaseapp.com",
+    projectId: "project",
+    appId: "FIREBASE_APP_ID",
+  },
+};

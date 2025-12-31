@@ -9,7 +9,7 @@ import os
 class VertexAIConfig:
     project_id: str
     location: str
-    credentials_path: Path
+    credentials_path: Path | None
     model_name: str
     temperature: float
     max_output_tokens: int
@@ -29,14 +29,13 @@ class VertexAIConfig:
             raise ValueError(
                 "GOOGLE_CLOUD_PROJECT (or VERTEX_PROJECT_ID) must be set."
             )
-        if not credentials_path_str:
-            raise ValueError("GOOGLE_APPLICATION_CREDENTIALS must be set.")
-
-        credentials_path = Path(credentials_path_str)
-        if not credentials_path.exists():
-            raise FileNotFoundError(
-                f"GOOGLE_APPLICATION_CREDENTIALS not found: {credentials_path}"
-            )
+        credentials_path = None
+        if credentials_path_str:
+            credentials_path = Path(credentials_path_str)
+            if not credentials_path.exists():
+                raise FileNotFoundError(
+                    f"GOOGLE_APPLICATION_CREDENTIALS not found: {credentials_path}"
+                )
 
         temperature = float(os.getenv("VERTEX_TEMPERATURE", "0.0"))
         max_output_tokens = int(os.getenv("VERTEX_MAX_OUTPUT_TOKENS", "1024"))

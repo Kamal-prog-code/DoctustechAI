@@ -70,9 +70,11 @@ class VertexGeminiClient:
         response_mime_type: str | None = "application/json",
     ) -> None:
         suppress_vertex_warnings()
-        credentials = service_account.Credentials.from_service_account_file(
-            str(config.credentials_path)
-        )
+        credentials = None
+        if config.credentials_path:
+            credentials = service_account.Credentials.from_service_account_file(
+                str(config.credentials_path)
+            )
         vertexai.init(
             project=config.project_id,
             location=config.location,
